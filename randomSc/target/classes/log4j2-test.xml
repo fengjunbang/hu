@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="off">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+        </Console>
+    </Appenders>
+    <Loggers>
+        <!-- myibatis log configure -->
+        <logger name="com.apache.ibatis" level="info"/>
+        <logger name="org.mybatis.spring" level="info"/>
+        <logger name="java.sql.Connection" level="info"/>
+        <logger name="java.sql.Statement" level="info"/>
+        <logger name="java.sql.PreparedStatement" level="info"/>
+        
+        <!-- 减少部分info日志 -->
+        <logger name="druid.sql" level="debug"/>
+        <logger name="org.apache.shiro" level="info"/>
+        <logger name="org.mybatis.spring" level="info"/>
+        <logger name="org.springframework" level="info"/>
+        <logger name="com.baomidou.mybatisplus" level="info"/>
+        <logger name="org.apache.ibatis.io" level="info"/>
+        <logger name="org.apache.velocity" level="info"/>
+        
+        <!-- cache info -->
+        <logger name="net.sf.ehcache" level="info"/>
+        <logger name="org.springframework.cache" level="info"/>
+        <logger name="com.wangzhixuan.commons.shiro.cache" level="info"/>
+        
+        <!-- 业务info日志 -->
+        <logger name="com.wangzhixuan" level="info"/>
+        
+        <Root level="debug">
+            <AppenderRef ref="Console" />
+        </Root>
+    </Loggers>
+</Configuration>
