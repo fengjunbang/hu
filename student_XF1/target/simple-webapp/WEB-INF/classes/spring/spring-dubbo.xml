@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo
+       http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+    <dubbo:application name="zhou"/>   
+      <!-- 指定传输层通信协议  因为在同一台机器测试，所以端口不一样-->
+    <dubbo:protocol name="dubbo" port="20882"/>
+    <dubbo:reference 
+    interface="com.bw.zhou.service.WeekService" 
+    id ="weekService" 
+    url="dubbo://127.0.0.1:20881" 
+    ></dubbo:reference>
+    
+      <dubbo:reference 
+    interface="com.fengjunbang.fbs.service.StudentService" 
+    id ="weekService" 
+    url="dubbo://127.0.0.1:20881" 
+    ></dubbo:reference>
+</beans>
